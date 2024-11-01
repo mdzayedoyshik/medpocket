@@ -1,6 +1,6 @@
 class AppUrls {
   // static const String baseUrl = "http://192.168.0.158:9988/api/v1"; //!Local url
-  static const String baseUrl = "http://192.168.0.244:9008/api/v1"; //!Local url
+  static const String baseUrl = "https://medpocket-backend.vercel.app"; //!Live url
 
   static const String imageBaseUrl = 'https://medpocket-backend.vercel.app/uploads';
 
@@ -8,8 +8,9 @@ class AppUrls {
   static const String b2bToken = '';
 
   //! Auth 
-  static const String login = '$baseUrl/btob/auth/login';
-  static const String sendOtp = "$baseUrl/public/otp/send";
+  static const String signup = '$baseUrl/api/auth/signup';
+  static const String login = '$baseUrl/api/auth/login';
+  static const String requestReset = "$baseUrl/api/auth/request-password-reset";
   static const String verifyOtp = "$baseUrl/public/otp/match";
   static const String resetPassword = "$baseUrl/btob/auth/reset-password";
 
