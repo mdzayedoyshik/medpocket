@@ -579,10 +579,13 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
     final medicineData = <Medicine>[];
     for (int i = 0; i < medicines.length; i++) {
       String dosage = ((i < dosages.length) ? dosages[i] : "").replaceAll(" ", "");
-      List dayDose = dosage.split("+");
-      bool isMorning = dayDose[0] == "1" ? true : false;
-      bool isNoon = dayDose[1] == "1" ? true : false;
-      bool isEvening = dayDose[2] == "1" ? true : false;
+      // A medicine without a readable "1+0+1" line keeps all slots off
+      // and is left for the user to fill in, instead of throwing.
+      List<String> dayDose = dosage.split("+");
+      if (dayDose.length != 3) dayDose = ["0", "0", "0"];
+      bool isMorning = dayDose[0] == "1";
+      bool isNoon = dayDose[1] == "1";
+      bool isEvening = dayDose[2] == "1";
       medicineData.add(Medicine(
         isMorning: isMorning,
         isNoon: isNoon,
