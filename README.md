@@ -4,8 +4,6 @@ A personal health record app for Android and iOS, built as my final-year project
 
 This repository is the Flutter app. The API (Express, MongoDB, file storage on S3) is a separate service.
 
-<!-- screenshots -->
-
 ## What it does
 
 - **Vitals:** height, weight, BMI, blood pressure and glucose, with charts over time.
